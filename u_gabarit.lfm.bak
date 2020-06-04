@@ -1,0 +1,22 @@
+object f_gabarit: Tf_gabarit
+  Left = 589
+  Height = 800
+  Top = 277
+  Width = 1200
+  Caption = 'f_gabarit'
+  Color = clActiveBorder
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -24
+  Font.Name = 'Calibri'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Menu = mnu_main
+  LCLVersion = '1.6.0.4'
+  object mnu_main: TMainMenu
+    left = 364
+    top = 317
+    object mnu_accueil: TMenuItem
+      Caption = 'Accueil'
+    end
+  end
+end

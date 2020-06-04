@@ -1,0 +1,33 @@
+object f_gabarit: Tf_gabarit
+  Left = 589
+  Height = 800
+  Top = 277
+  Width = 1200
+  Caption = 'f_gabarit'
+  ClientHeight = 770
+  ClientWidth = 1200
+  Color = clActiveBorder
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -24
+  Font.Name = 'Calibri'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Menu = mnu_main
+  LCLVersion = '1.6.0.4'
+  object pnl_ariane: TPanel
+    Left = 0
+    Height = 30
+    Top = 0
+    Width = 1200
+    Align = alTop
+    Caption = 'fil d''ariane'
+    TabOrder = 0
+  end
+  object mnu_main: TMainMenu
+    left = 364
+    top = 317
+    object mnu_accueil: TMenuItem
+      Caption = 'Accueil'
+    end
+  end
+end
