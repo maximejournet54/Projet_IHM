@@ -33,7 +33,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="projet_tp.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -42,8 +42,13 @@
         <Filename Value="u_gabarit.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="f_gabarit"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="u_feuille_style.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
