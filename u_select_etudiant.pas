@@ -19,6 +19,7 @@ type
     lbl_code: TLabel;
     lbl_numero: TLabel;
     lbl_nom: TLabel;
+    pnl_tous_edit: TPanel;
     pnl_filiere_edit: TPanel;
     pnl_filiere_btn: TPanel;
     pnl_filiere: TPanel;
@@ -31,7 +32,9 @@ type
     pnl_titre: TPanel;
     procedure Init;
     procedure NonSelectionPanel (pnl : TPanel);
+    procedure pnl_choixClick(Sender: TObject);
     procedure pnl_choix_btnClick (Sender: TObject);
+    procedure AucuneSelection;
 
   private
     { private declarations }
@@ -60,7 +63,7 @@ end;
      procedure Tf_select_inscrit.pnl_choix_btnClick (Sender : TObject);
 var pnl : TPanel;
 begin
-
+ AucuneSelection; // retirer la sélection en cours
  pnl := TPanel(Sender) ;
  style.panel_selection (pnl);
  pnl := TPanel(pnl.Parent); // récupération du panel parent "pnl_xxx"
@@ -70,6 +73,7 @@ begin
  pnl.show;
  pnl_actif := pnl; pnl_actif.enabled := true;
 end;
+
 procedure Tf_select_inscrit.NonSelectionPanel (pnl : TPanel);
 var pnl_enfant : TPanel;
 begin
@@ -82,6 +86,16 @@ begin
  pnl_enfant.Hide;
 end;
 
+procedure Tf_select_inscrit.pnl_choixClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tf_select_inscrit.AucuneSelection;
+begin
+NonSelectionPanel (pnl_tous); NonSelectionPanel (pnl_etudiant);
+NonSelectionPanel (pnl_filiere);
+end;
 
 end.
-
+                                    

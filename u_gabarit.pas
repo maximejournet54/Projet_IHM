@@ -33,6 +33,9 @@ type
     procedure item_quitterClick(Sender: TObject);
     procedure mnu_item_Click(Sender: TObject);
     procedure choix_item_liste;
+    procedure pnl_arianeClick(Sender: TObject);
+    procedure pnl_selectionClick(Sender: TObject);
+    procedure pnl_travailClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -61,6 +64,8 @@ begin
          pnl_ariane.caption := ' >' + item.caption +pnl_ariane.Caption;
          item := item.parent;
    until item.parent = nil;
+   item := TmenuItem(Sender);
+ if item=item_liste1 then choix_item_liste;
 
 end;
 
@@ -71,6 +76,21 @@ begin
  f_select_inscrit.align := alClient;
  f_select_inscrit.init;
  f_select_inscrit.show;
+end;
+
+procedure Tf_gabarit.pnl_arianeClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tf_gabarit.pnl_selectionClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tf_gabarit.pnl_travailClick(Sender: TObject);
+begin
+
 end;
 
 
@@ -94,4 +114,4 @@ begin
 end;
 
 end.
-
+                       
