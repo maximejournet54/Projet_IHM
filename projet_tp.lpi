@@ -28,12 +28,15 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="1">
+    <RequiredPackages Count="2">
       <Item1>
-        <PackageName Value="LCL"/>
+        <PackageName Value="zcomponent"/>
       </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="6">
       <Unit0>
         <Filename Value="projet_tp.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -53,8 +56,22 @@
         <Filename Value="u_select_etudiant.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="f_select_inscrit"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="u_list_inscrit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_list_inscrit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="u_detail_inscrit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_detail_inscrit"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

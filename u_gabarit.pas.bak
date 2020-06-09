@@ -33,6 +33,9 @@ type
     procedure item_quitterClick(Sender: TObject);
     procedure mnu_item_Click(Sender: TObject);
     procedure choix_item_liste;
+    procedure pnl_arianeClick(Sender: TObject);
+    procedure pnl_selectionClick(Sender: TObject);
+    procedure pnl_travailClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -47,7 +50,8 @@ implementation
 {$R *.lfm}
 
 { Tf_gabarit }
-USES u_feuille_style, u_select_etudiant;
+
+uses u_feuille_style, u_select_etudiant, u_list_inscrit, u_detail_inscrit;
 
 procedure Tf_gabarit.mnu_item_Click(Sender: TObject);
 var
@@ -62,15 +66,38 @@ begin
          item := item.parent;
    until item.parent = nil;
    item := TmenuItem(Sender);
+ if item=item_liste1 then choix_item_liste;
+
 end;
 
 procedure Tf_gabarit.choix_item_liste;
 begin
+  f_list_inscrit.borderstyle := bsNone;
+  f_list_inscrit.parent := pnl_travail;
+  f_list_inscrit.align := alClient;
+  f_list_inscrit.init;
+  f_list_inscrit.show ;
+
  f_select_inscrit.borderstyle := bsNone;
  f_select_inscrit.parent := pnl_selection;
  f_select_inscrit.align := alClient;
  f_select_inscrit.init;
  f_select_inscrit.show;
+end;
+
+procedure Tf_gabarit.pnl_arianeClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tf_gabarit.pnl_selectionClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tf_gabarit.pnl_travailClick(Sender: TObject);
+begin
+
 end;
 
 
@@ -94,4 +121,4 @@ begin
 end;
 
 end.
-
+                       

@@ -50,7 +50,8 @@ implementation
 {$R *.lfm}
 
 { Tf_gabarit }
-USES u_feuille_style, u_select_etudiant;
+
+uses u_feuille_style, u_select_etudiant, u_list_inscrit, u_detail_inscrit;
 
 procedure Tf_gabarit.mnu_item_Click(Sender: TObject);
 var
@@ -71,11 +72,21 @@ end;
 
 procedure Tf_gabarit.choix_item_liste;
 begin
+  f_list_inscrit.borderstyle := bsNone;
+  f_list_inscrit.parent := pnl_travail;
+  f_list_inscrit.align := alClient;
+  f_list_inscrit.init;
+  f_list_inscrit.show ;
+
  f_select_inscrit.borderstyle := bsNone;
  f_select_inscrit.parent := pnl_selection;
  f_select_inscrit.align := alClient;
  f_select_inscrit.init;
  f_select_inscrit.show;
+
+ f_detail_inscrit.borderstyle := bsNone;
+ f_detail_inscrit.parent := pnl_travail;
+ f_detail_inscrit.align := alClient;
 end;
 
 procedure Tf_gabarit.pnl_arianeClick(Sender: TObject);
