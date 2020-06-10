@@ -30,7 +30,7 @@ inherited f_list_inscrit: Tf_list_inscrit
         Left = 439
       end
       object SpinEdit1: TSpinEdit[4]
-        Left = 16
+        Left = 104
         Height = 27
         Top = 7
         Width = 50
@@ -49,44 +49,42 @@ inherited f_list_inscrit: Tf_list_inscrit
     inherited sg_liste: TStringGrid
       Height = 652
       Width = 920
+      ColCount = 5
       Columns = <      
         item
           PickList.Strings = (          )
           Title.Caption = 'n°'
-          Width = 50
+          Width = 80
         end      
         item
           PickList.Strings = (          )
-          Title.Caption = ''
+          Title.Caption = 'Civ'
           Width = 50
         end      
         item
           PickList.Strings = (          )
           Title.Caption = 'Identité'
-          Width = 150
+          Width = 250
         end      
         item
           PickList.Strings = (          )
           Title.Caption = 'Commune domicile'
-          Width = 150
+          Width = 270
         end      
         item
           PickList.Strings = (          )
           Title.Caption = 'Filière'
-          Width = 100
-        end      
-        item
-          PickList.Strings = (          )
-          Title.Caption = ''
-          Width = 100
+          Width = 270
         end>
       ColWidths = (
+        80
         50
-        50
-        150
-        150
-        100
-        100
+        250
+        270
+        270
+      )
+      Cells = (
+        0
       )
     end
   end

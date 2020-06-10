@@ -16,28 +16,28 @@ type
     btn_retour: TButton;
     btn_valider: TButton;
     btn_annuler: TButton;
-    cbx_genre: TComboBox;
+    cbx_civ: TComboBox;
     edt_filiere: TEdit;
     edt_telephone: TEdit;
     edt_portable: TEdit;
     edt_email: TEdit;
     edt_adresse: TEdit;
     edt_cp: TEdit;
-    edt_commune: TEdit;
+    edt_ville: TEdit;
     edt_nom: TEdit;
     edt_prenom: TEdit;
     edt_num: TEdit;
-    lbl_filiere_long: TLabel;
-    lbl_filiere_court: TLabel;
-    lbl_filiere_erreur: TLabel;
-    lbl_email_erreur: TLabel;
-    lbl_telephone_erreur: TLabel;
-    lbl_commune_erreur: TLabel;
-    lbl_cp_erreur: TLabel;
-    lbl_adresse_erreur: TLabel;
     lbl_prenom_erreur: TLabel;
     lbl_nom_erreur: TLabel;
     lbl_num_erreur: TLabel;
+    lbl_filiere_court: TLabel;
+    lbl_filiere_long: TLabel;
+    lbl_filiere_erreur: TLabel;
+    lbl_mel_erreur: TLabel;
+    lbl_telephone_erreur: TLabel;
+    lbl_ville_erreur: TLabel;
+    lbl_cp_erreur: TLabel;
+    lbl_adresse_erreur: TLabel;
     lbl_notes: TLabel;
     lbl_filiere: TLabel;
     lbl_email: TLabel;
@@ -68,6 +68,7 @@ type
     procedure add;
     procedure delete ( idinf : string);
     procedure edt_Enter (Sender : TObject );
+    procedure lbl_num_erreurClick(Sender: TObject);
     procedure pnl_adresseClick(Sender: TObject);
 
   private
@@ -108,13 +109,13 @@ begin
    style.panel_travail (pnl_adresse);
 		style.label_titre  (lbl_adresse);
 		style.label_erreur (lbl_adresse_erreur);	lbl_adresse_erreur.caption  :=  ' ' ;
-                style.label_erreur (lbl_commune_erreur);		lbl_commune_erreur.caption  :=  ' ' ;
+                style.label_erreur (lbl_ville_erreur);		lbl_ville_erreur.caption  :=  ' ' ;
 		style.label_erreur (lbl_cp_erreur);		lbl_cp_erreur.caption  :=  ' ' ;
 
    style.panel_travail (pnl_contact);
 		style.label_titre  (lbl_contact);
 		style.label_erreur (lbl_telephone_erreur);	lbl_telephone_erreur.caption :=  ' ' ;
-		style.label_erreur (lbl_email_erreur);		lbl_email_erreur.caption :=  ' ' ;
+		style.label_erreur (lbl_mel_erreur);		lbl_mel_erreur.caption :=  ' ' ;
 
    style.panel_travail (pnl_filiere);
 		style.label_titre  (lbl_filiere);
@@ -133,7 +134,7 @@ begin
    lbl_num_erreur.caption    :=  ' ' ;
    edt_nom.clear;
    edt_nom.ReadOnly	:=affi;
-   cbx_genre.ReadOnly	:=affi;
+   cbx_civ.ReadOnly	:=affi;
    lbl_nom_erreur.caption    :=  ' ' ;
    edt_prenom.clear;
    edt_prenom.ReadOnly	:=affi;
@@ -146,8 +147,8 @@ begin
    edt_cp.clear;
    edt_cp.ReadOnly	:=affi;
    lbl_cp_erreur.caption    :=  ' ' ;
-   edt_commune.clear;
-   edt_commune.ReadOnly	:=affi;
+   edt_ville.clear;
+   edt_ville.ReadOnly	:=affi;
    lbl_commune_erreur.caption    :=  ' ' ;
 
 // initialisation contact
@@ -259,11 +260,6 @@ end;
 procedure Tf_detail_inscrit.edt_Enter(Sender: TObject);
 begin
      oldvaleur := TEdit(Sender).text;
-end;
-
-procedure Tf_detail_inscrit.pnl_adresseClick(Sender: TObject);
-begin
-
 end;
 
 procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);

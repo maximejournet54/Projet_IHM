@@ -647,6 +647,8 @@ begin
    result := resultat;
 end;
 
+
+
 constructor TMySQL.Create;
 begin
   bd    := TZConnection.Create(nil);

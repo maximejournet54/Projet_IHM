@@ -31,7 +31,8 @@ implementation
 
 {Tf_list_inscrit}
 
-uses u_feuille_style;
+uses u_feuille_style, u_detail_inscrit;
+
 procedure Tf_list_inscrit.Init;
 begin
 style.panel_travail(pnl_titre);

@@ -24,6 +24,7 @@ type
     item_archive_n1: TMenuItem;
     item_archive_n2: TMenuItem;
     item_statistiques: TMenuItem;
+    lbl_bienvenue: TLabel;
     mnu_main: TMainMenu;
     pnl_selection: TPanel;
     pnl_travail: TPanel;
@@ -31,11 +32,9 @@ type
     pnl_ariane: TPanel;
     procedure FormShow(Sender: TObject);
     procedure item_quitterClick(Sender: TObject);
+    procedure lbl_bienvenueClick(Sender: TObject);
     procedure mnu_item_Click(Sender: TObject);
     procedure choix_item_liste;
-    procedure pnl_arianeClick(Sender: TObject);
-    procedure pnl_selectionClick(Sender: TObject);
-    procedure pnl_travailClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -72,40 +71,45 @@ end;
 
 procedure Tf_gabarit.choix_item_liste;
 begin
-  f_list_inscrit.borderstyle := bsNone;
-  f_list_inscrit.parent := pnl_travail;
-  f_list_inscrit.align := alClient;
-  f_list_inscrit.init;
-  f_list_inscrit.show ;
+     f_list_inscrit.borderstyle	:= bsNone;
+     f_list_inscrit.parent		:= pnl_travail;
+     f_list_inscrit.align		:= alClient;
+     f_list_inscrit.init;
+     f_list_inscrit.show ;
 
- f_select_inscrit.borderstyle := bsNone;
- f_select_inscrit.parent := pnl_selection;
- f_select_inscrit.align := alClient;
- f_select_inscrit.init;
- f_select_inscrit.show;
+      f_select_etudiant.borderstyle := bsNone;
+      f_select_etudiant.parent          := pnl_selection;
+      f_select_etudiant.align            := alClient;
+      f_select_etudiant.init;
+      f_select_etudiant.show;
 
- f_detail_inscrit.borderstyle := bsNone;
- f_detail_inscrit.parent := pnl_travail;
- f_detail_inscrit.align := alClient;
+      f_detail_inscrit.borderstyle := bsNone;
+      f_detail_inscrit.parent      := pnl_travail;
+      f_detail_inscrit.align       := alClient
 end;
-
 
 procedure Tf_gabarit.FormShow(Sender: TObject);
 begin
- style.panel_selection (pnl_ariane);
- style.panel_defaut (pnl_selection);
- style.panel_travail (pnl_travail);
- style.panel_defaut (pnl_info);
- f_gabarit.width := 1200;
- f_gabarit.height := 800;
- pnl_ariane.caption:= ' >' + item_accueil.caption;
- modele.open;
+   style.panel_selection (pnl_ariane);
+   style.panel_defaut    (pnl_selection);
+   style.panel_travail   (pnl_travail);
+   style.panel_defaut    (pnl_info);
+   f_gabarit.width := 1200;
+   f_gabarit.height :=  800;
+   pnl_ariane.caption:= ' >' + item_accueil.caption;
+   modele.open;
 end;
+
 
 procedure Tf_gabarit.item_quitterClick(Sender: TObject);
 begin
-     modele.close;
-     close;
+   modele.close;
+   close;
+end;
+
+procedure Tf_gabarit.lbl_bienvenueClick(Sender: TObject);
+begin
+
 end;
 
 end.

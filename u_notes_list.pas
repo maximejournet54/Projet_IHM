@@ -8,7 +8,11 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, u_liste;
 
 type
+
+  { Tf_notes_list }
+
   Tf_notes_list = class(TF_liste)
+    procedure pnl_affiClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -23,6 +27,9 @@ implementation
 {$R *.lfm}
 { Tf_releve_list }
 uses   u_feuille_style;
+
+{ Tf_notes_list }
+
 procedure Tf_releve_list.Init(affi: boolean);
 begin
       style.panel_travail(pnl_titre);

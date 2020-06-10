@@ -229,5 +229,7 @@ begin
    else result:= 0;
 end;
 
+
+
 end.
 

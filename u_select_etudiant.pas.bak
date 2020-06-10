@@ -13,17 +13,10 @@ type
   { Tf_select_etudiant }
 
   Tf_select_etudiant = class(TForm)
-    btn_rechercher: TButton;
-    edt_code: TEdit;
     edt_num: TEdit;
     edt_nom: TEdit;
-    lbl_code: TLabel;
     lbl_nom: TLabel;
     lbl_num: TLabel;
-    pnl_rechercher: TPanel;
-    pnl_filiere_edit: TPanel;
-    pnl_filiere_btn: TPanel;
-    pnl_filiere: TPanel;
     pnl_etudiant_edit: TPanel;
     pnl_etudiant_btn: TPanel;
     pnl_etudiant: TPanel;
