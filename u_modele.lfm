@@ -1,0 +1,8 @@
+object modele: Tmodele
+  Left = 467
+  Height = 240
+  Top = 647
+  Width = 320
+  Caption = 'modele'
+  LCLVersion = '1.6.0.4'
+end

@@ -1,0 +1,8 @@
+object f_notes_list: Tf_notes_list
+  Left = 366
+  Height = 240
+  Top = 585
+  Width = 320
+  Caption = 'f_notes_list'
+  LCLVersion = '1.6.0.4'
+end

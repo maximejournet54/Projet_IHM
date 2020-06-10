@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  ExtCtrls;
+  ExtCtrls, StdCtrls;
 
 type
 
@@ -51,7 +51,7 @@ implementation
 
 { Tf_gabarit }
 
-uses u_feuille_style, u_select_etudiant, u_list_inscrit, u_detail_inscrit;
+uses u_feuille_style, u_select_etudiant, u_list_inscrit, u_detail_inscrit, u_modele;
 
 procedure Tf_gabarit.mnu_item_Click(Sender: TObject);
 var
@@ -89,21 +89,6 @@ begin
  f_detail_inscrit.align := alClient;
 end;
 
-procedure Tf_gabarit.pnl_arianeClick(Sender: TObject);
-begin
-
-end;
-
-procedure Tf_gabarit.pnl_selectionClick(Sender: TObject);
-begin
-
-end;
-
-procedure Tf_gabarit.pnl_travailClick(Sender: TObject);
-begin
-
-end;
-
 
 procedure Tf_gabarit.FormShow(Sender: TObject);
 begin
@@ -113,14 +98,13 @@ begin
  style.panel_defaut (pnl_info);
  f_gabarit.width := 1200;
  f_gabarit.height := 800;
- // item accueil sélectionné par défaut
-
- //fiche d'accueil affichée
-
+ pnl_ariane.caption:= ' >' + item_accueil.caption;
+ modele.open;
 end;
 
 procedure Tf_gabarit.item_quitterClick(Sender: TObject);
 begin
+     modele.close;
      close;
 end;
 
