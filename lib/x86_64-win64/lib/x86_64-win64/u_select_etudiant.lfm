@@ -1,0 +1,179 @@
+object f_select_etudiant: Tf_select_etudiant
+  Left = 283
+  Height = 720
+  Top = 122
+  Width = 280
+  Caption = 'f_select_etudiant'
+  ClientHeight = 720
+  ClientWidth = 280
+  LCLVersion = '1.6.0.4'
+  object pnl_titre: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 280
+    Align = alTop
+    Caption = 'Sélection'
+    TabOrder = 0
+  end
+  object pnl_choix: TPanel
+    Left = 0
+    Height = 670
+    Top = 50
+    Width = 280
+    Align = alClient
+    ClientHeight = 670
+    ClientWidth = 280
+    TabOrder = 1
+    OnClick = pnl_choixClick
+    object pnl_tous: TPanel
+      Left = 1
+      Height = 100
+      Top = 1
+      Width = 278
+      Align = alTop
+      ClientHeight = 100
+      ClientWidth = 278
+      TabOrder = 0
+      object pnl_tous_btn: TPanel
+        Left = 1
+        Height = 30
+        Top = 1
+        Width = 276
+        Align = alTop
+        Caption = 'Tous'
+        TabOrder = 0
+      end
+      object pnl_tous_edit: TPanel
+        Left = 1
+        Height = 70
+        Top = 31
+        Width = 276
+        Align = alTop
+        TabOrder = 1
+      end
+    end
+    object pnl_etudiant: TPanel
+      Left = 1
+      Height = 100
+      Top = 101
+      Width = 278
+      Align = alTop
+      ClientHeight = 100
+      ClientWidth = 278
+      TabOrder = 1
+      object pnl_etudiant_btn: TPanel
+        Left = 1
+        Height = 30
+        Top = 1
+        Width = 276
+        Align = alTop
+        Caption = 'Etudiant'
+        TabOrder = 0
+      end
+      object pnl_etudiant_edit: TPanel
+        Left = 1
+        Height = 70
+        Top = 31
+        Width = 276
+        Align = alTop
+        ClientHeight = 70
+        ClientWidth = 276
+        TabOrder = 1
+        object lbl_num: TLabel
+          Left = 8
+          Height = 15
+          Top = 24
+          Width = 44
+          Caption = 'Numéro'
+          ParentColor = False
+        end
+        object lbl_nom: TLabel
+          Left = 8
+          Height = 15
+          Top = 48
+          Width = 27
+          Caption = 'Nom'
+          ParentColor = False
+        end
+        object edt_num: TEdit
+          Left = 72
+          Height = 25
+          Top = 16
+          Width = 80
+          AutoSize = False
+          TabOrder = 0
+        end
+        object edt_nom: TEdit
+          Left = 72
+          Height = 23
+          Top = 48
+          Width = 170
+          TabOrder = 1
+        end
+      end
+    end
+    object pnl_filiere: TPanel
+      Left = 1
+      Height = 100
+      Top = 201
+      Width = 278
+      Align = alTop
+      ClientHeight = 100
+      ClientWidth = 278
+      TabOrder = 2
+      object pnl_filiere_btn: TPanel
+        Left = 1
+        Height = 30
+        Top = 1
+        Width = 276
+        Align = alTop
+        Caption = 'Filiere'
+        TabOrder = 0
+      end
+      object pnl_filiere_edit: TPanel
+        Left = 1
+        Height = 70
+        Top = 31
+        Width = 276
+        Align = alTop
+        ClientHeight = 70
+        ClientWidth = 276
+        TabOrder = 1
+        object lbl_code: TLabel
+          Left = 18
+          Height = 15
+          Top = 40
+          Width = 28
+          Caption = 'Code'
+          ParentColor = False
+        end
+        object edt_code: TEdit
+          Left = 72
+          Height = 23
+          Top = 40
+          Width = 100
+          TabOrder = 0
+        end
+      end
+    end
+    object pnl_rechercher: TPanel
+      Left = 1
+      Height = 50
+      Top = 301
+      Width = 278
+      Align = alTop
+      ClientHeight = 50
+      ClientWidth = 278
+      TabOrder = 3
+      object btn_rechercher: TButton
+        Left = 96
+        Height = 25
+        Top = 16
+        Width = 75
+        Caption = 'Ok'
+        TabOrder = 0
+      end
+    end
+  end
+end
