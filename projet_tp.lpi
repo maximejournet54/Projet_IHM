@@ -36,7 +36,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="9">
+    <Units Count="8">
       <Unit0>
         <Filename Value="projet_tp.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -55,7 +55,7 @@
       <Unit3>
         <Filename Value="u_select_etudiant.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="f_select_inscrit"/>
+        <ComponentName Value="f_select_etudiant"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit3>
@@ -87,12 +87,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit7>
-      <Unit8>
-        <Filename Value="u_select_etudiant.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="f_select_etudiant"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
