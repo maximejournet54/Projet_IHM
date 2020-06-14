@@ -59,9 +59,20 @@ type
     pnl_detail: TPanel;
     pnl_btn: TPanel;
     pnl_titre: TPanel;
+    procedure btn_annulerClick(Sender: TObject);
     procedure btn_retourClick(Sender: TObject);
+    procedure btn_validerClick(Sender: TObject);
+    procedure cbx_civChange(Sender: TObject);
+    procedure edt_adresseExit(Sender: TObject);
+    procedure edt_cpExit(Sender: TObject);
+    procedure edt_emailExit(Sender: TObject);
+    procedure edt_filiereExit(Sender: TObject);
     procedure edt_nomExit(Sender: TObject);
     procedure edt_numExit(Sender: TObject);
+    procedure edt_portableExit(Sender: TObject);
+    procedure edt_prenomExit(Sender: TObject);
+    procedure edt_telephoneExit(Sender: TObject);
+    procedure edt_villeExit(Sender: TObject);
     procedure init ( idinf : string; affi : boolean);
     procedure detail ( idinf : string);
     procedure edit ( idinf : string);
@@ -70,6 +81,7 @@ type
     procedure edt_Enter (Sender : TObject );
     procedure lbl_num_erreurClick(Sender: TObject);
     procedure pnl_adresseClick(Sender: TObject);
+    procedure pnl_notes_listClick(Sender: TObject);
 
   private
     { private declarations }
@@ -172,12 +184,12 @@ begin
    btn_annuler.visible	:=NOT  affi;    // visible quand ajout/modification inscription
 
 // initialisation relevé
-   f_notes_list.borderstyle  := bsNone;
-   f_notes_list.parent  := pnl_releve_list;
-   f_notes_list.align  := alClient;
-   f_notes_list.init(affi);
-   f_notes_list.show;
-   f_notes_list.affi_data(modele.inscrit_notes(idinf));
+   pnl_notes_list.borderstyle  := bsNone;
+   pnl_notes_list.parent  := pnl_notes_list;
+   pnl_notes_list.align  := alClient;
+   pnl_notes_list.init(affi);
+   pnl_notes_list.show;
+   pnl_notes_list.affi_data(modele.inscrit_notes(idinf));
 
    show;
 
@@ -262,14 +274,34 @@ begin
      oldvaleur := TEdit(Sender).text;
 end;
 
-procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);
+procedure Tf_detail_inscrit.lbl_num_erreurClick(Sender: TObject);
 begin
-     close;
+
+end;
+
+procedure Tf_detail_inscrit.pnl_adresseClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tf_detail_inscrit.pnl_notes_listClick(Sender: TObject);
+begin
+
 end;
 
 procedure Tf_detail_inscrit.btn_retourClick(Sender: TObject);
 begin
      close;
+end;
+
+procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);
+begin
+  close;
+end;
+
+procedure Tf_detail_inscrit.cbx_civChange(Sender: TObject);
+begin
+
 end;
 
 procedure Tf_detail_inscrit.btn_validerClick(Sender: TObject);
@@ -318,9 +350,9 @@ begin
     valide := affi_erreur_saisie (erreur, lbl_telephone_erreur, edt_portable)  AND  valide;
 
     erreur := '';
-    saisie := edt_mel.text;
-    if  saisie = ''  then  erreur := 'Le mel doit être rempli.';
-    valide := affi_erreur_saisie (erreur, lbl_mel_erreur, edt_mel)  AND  valide;
+    saisie := edt_email.text;
+    if  saisie = ''  then  erreur := 'Le mail doit être rempli.';
+    valide := affi_erreur_saisie (erreur, lbl_mel_erreur, edt_email)  AND  valide;
 
     erreur := '';
     saisie := edt_filiere.text;
@@ -349,9 +381,9 @@ begin
     then  messagedlg ('Erreur enregistrement Inscription', 'La saisie est incorrecte.' +#13 +'Corrigez la saisie et validez à nouveau.', mtWarning, [mbOk], 0)
     else  begin
          if  id =''
-         then  modele.inscrit_insert (edt_num.Text, cbx_civ.Items[cbx_civ.ItemIndex], edt_nom.Text, edt_prenom.Text, edt_adresse.Text, edt_cp.Text, edt_ville.Text, edt_telephone.Text, edt_portable.Text, edt_mel.Text, edt_filiere.Text)
+         then  modele.inscrit_insert (edt_num.Text, cbx_civ.Items[cbx_civ.ItemIndex], edt_nom.Text, edt_prenom.Text, edt_adresse.Text, edt_cp.Text, edt_ville.Text, edt_telephone.Text, edt_portable.Text, edt_email.Text, edt_filiere.Text)
          else  begin
-       	       modele.inscrit_update (id, cbx_civ.Items[cbx_civ.ItemIndex], edt_nom.text, edt_prenom.text, edt_adresse.text, edt_cp.text, edt_ville.text, edt_telephone.text, edt_portable.text, edt_mel.Text)
+       	       modele.inscrit_update (id, cbx_civ.Items[cbx_civ.ItemIndex], edt_nom.text, edt_prenom.text, edt_adresse.text, edt_cp.text, edt_ville.text, edt_telephone.text, edt_portable.text, edt_email.Text)
          end;
 
 	  if id='' then f_list_inscrit.line_add(modele.inscrit_liste_etudiant(edt_num.text,''))
@@ -370,9 +402,9 @@ begin
    edt_cp.text := TRIM(edt_cp.text);
 end;
 
-procedure Tf_detail_inscrit.edt_melExit(Sender: TObject);
+procedure Tf_detail_inscrit.edt_emailExit(Sender: TObject);
 begin
-   edt_mel.text := TRIM(edt_mel.text);
+   edt_email.text := TRIM(edt_email.text);
 end;
 
 procedure Tf_detail_inscrit.edt_nomExit(Sender: TObject);

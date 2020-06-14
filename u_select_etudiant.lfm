@@ -1,7 +1,7 @@
 object f_select_etudiant: Tf_select_etudiant
-  Left = 516
+  Left = 283
   Height = 720
-  Top = 329
+  Top = 122
   Width = 280
   Caption = 'f_select_etudiant'
   ClientHeight = 720
@@ -25,6 +25,7 @@ object f_select_etudiant: Tf_select_etudiant
     ClientHeight = 670
     ClientWidth = 280
     TabOrder = 1
+    OnClick = pnl_choixClick
     object pnl_tous: TPanel
       Left = 1
       Height = 100
@@ -81,17 +82,17 @@ object f_select_etudiant: Tf_select_etudiant
         TabOrder = 1
         object lbl_num: TLabel
           Left = 8
-          Height = 19
+          Height = 15
           Top = 24
-          Width = 50
+          Width = 44
           Caption = 'Numéro'
           ParentColor = False
         end
         object lbl_nom: TLabel
           Left = 8
-          Height = 19
+          Height = 15
           Top = 48
-          Width = 30
+          Width = 27
           Caption = 'Nom'
           ParentColor = False
         end
@@ -105,7 +106,7 @@ object f_select_etudiant: Tf_select_etudiant
         end
         object edt_nom: TEdit
           Left = 72
-          Height = 27
+          Height = 23
           Top = 48
           Width = 170
           TabOrder = 1
@@ -141,15 +142,15 @@ object f_select_etudiant: Tf_select_etudiant
         TabOrder = 1
         object lbl_code: TLabel
           Left = 18
-          Height = 19
+          Height = 15
           Top = 40
-          Width = 32
+          Width = 28
           Caption = 'Code'
           ParentColor = False
         end
         object edt_code: TEdit
           Left = 72
-          Height = 27
+          Height = 23
           Top = 40
           Width = 100
           TabOrder = 0

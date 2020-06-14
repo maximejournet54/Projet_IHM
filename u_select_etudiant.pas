@@ -32,6 +32,7 @@ type
     pnl_tous: TPanel;
     pnl_choix: TPanel;
     pnl_titre: TPanel;
+    procedure pnl_choixClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -44,6 +45,13 @@ var
 implementation
 
 {$R *.lfm}
+
+{ Tf_select_etudiant }
+
+procedure Tf_select_etudiant.pnl_choixClick(Sender: TObject);
+begin
+
+end;
 
 end.
 
