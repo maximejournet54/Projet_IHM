@@ -33,9 +33,9 @@ implementation
 procedure Tmodele.open;
 begin
       Bd_open ('devbdd.iutmetz.univ-lorraine.fr', 0
-		, 'morize7u_bdnote'
-		, 'morize7u_appli'
-		, 'M*Vincent57*'
+		, 'journet9u_bdnote'
+		, 'journet9u_appli'
+		, '23JAN2001'
 		, 'mysqld-5', 'libmysql64.dll');
 end;
 

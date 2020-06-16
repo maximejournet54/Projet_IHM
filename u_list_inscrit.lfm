@@ -1,7 +1,7 @@
 inherited f_list_inscrit: Tf_list_inscrit
-  Left = 310
+  Left = 505
   Height = 720
-  Top = 601
+  Top = 211
   Width = 920
   Caption = 'f_list_inscrit'
   ClientHeight = 720
@@ -29,7 +29,7 @@ inherited f_list_inscrit: Tf_list_inscrit
       inherited btn_line_edit: TSpeedButton
         Left = 439
       end
-      object SpinEdit1: TSpinEdit[4]
+      object spedit_ligne: TSpinEdit[4]
         Left = 104
         Height = 27
         Top = 7

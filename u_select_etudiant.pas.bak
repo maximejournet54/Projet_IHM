@@ -48,10 +48,7 @@ implementation
 
 { Tf_select_etudiant }
 
-procedure Tf_select_etudiant.pnl_choixClick(Sender: TObject);
-begin
 
-end;
 
 end.
 

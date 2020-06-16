@@ -66,10 +66,13 @@ type
     procedure edt_adresseExit(Sender: TObject);
     procedure edt_cpExit(Sender: TObject);
     procedure edt_emailExit(Sender: TObject);
+    procedure edt_filiereExit(Sender: TObject);
     procedure edt_nomExit(Sender: TObject);
     procedure edt_numExit(Sender: TObject);
     procedure edt_portableExit(Sender: TObject);
     procedure edt_prenomExit(Sender: TObject);
+    procedure edt_telephoneExit(Sender: TObject);
+    procedure edt_villeExit(Sender: TObject);
     procedure init ( idinf : string; affi : boolean);
     procedure detail ( idinf : string);
     procedure edit ( idinf : string);
@@ -186,7 +189,7 @@ begin
    pnl_notes_list.align  := alClient;
    pnl_notes_list.init(affi);
    pnl_notes_list.show;
-   pnl_notes_list.affi_data(modele.inscrit_notes(idinf));
+   pnl_notes_list.affi_data(Tmodele.inscrit_notes(idinf));
 
    show;
 

@@ -572,9 +572,6 @@ begin
       end;
 end;
 procedure TLoadDataSet.AjouterDesLignes (flux_add : TTableauAssociatif);
-var
-   i : integer;
-   unenreg : TTableauAssociatif;
 begin
    SetLength(resultat,count +1);
    resultat[high(resultat)] := AjouterEnreg(flux_add);

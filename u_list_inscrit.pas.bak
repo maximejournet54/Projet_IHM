@@ -13,7 +13,7 @@ type
   { Tf_list_inscrit }
 
   Tf_list_inscrit = class(TF_liste)
-    SpinEdit1: TSpinEdit;
+    spedit_ligne: TSpinEdit;
     procedure Init;
 
   private
@@ -39,6 +39,8 @@ style.panel_travail(pnl_titre);
 style.panel_travail(pnl_btn);
 style.panel_travail(pnl_affi);
 style.grille (sg_liste);
+f_liste_inscrit.affi_data(modele.inscription_liste_tous);
+sg_liste.RowCount:=spedit_ligne.Value+1;
 end;
 
 

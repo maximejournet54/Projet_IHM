@@ -107,10 +107,5 @@ begin
    close;
 end;
 
-procedure Tf_gabarit.lbl_bienvenueClick(Sender: TObject);
-begin
-
-end;
-
 end.
                        

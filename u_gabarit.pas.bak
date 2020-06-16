@@ -77,11 +77,11 @@ begin
      f_list_inscrit.init;
      f_list_inscrit.show ;
 
-      f_select_inscrit.borderstyle := bsNone;
-      f_select_inscrit.parent          := pnl_selection;
-      f_select_inscrit.align            := alClient;
-      f_select_inscrit.init;
-      f_select_inscrit.show;
+      f_select_etudiant.borderstyle := bsNone;
+      f_select_etudiant.parent          := pnl_selection;
+      f_select_etudiant.align            := alClient;
+      f_select_etudiant.init;
+      f_select_etudiant.show;
 
       f_detail_inscrit.borderstyle := bsNone;
       f_detail_inscrit.parent      := pnl_travail;
