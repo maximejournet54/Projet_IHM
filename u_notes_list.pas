@@ -12,7 +12,6 @@ type
   { Tf_notes_list }
 
   Tf_notes_list = class(TF_liste)
-    procedure pnl_affiClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -30,14 +29,7 @@ uses   u_feuille_style;
 
 { Tf_notes_list }
 
-procedure Tf_releve_list.Init(affi: boolean);
-begin
-      style.panel_travail(pnl_titre);
-      style.panel_travail(pnl_btn);
-      style.panel_travail(pnl_affi);
-      style.grille (sg_liste);
-      pnl_btn.hide;
-end;
+
 
 end.
 

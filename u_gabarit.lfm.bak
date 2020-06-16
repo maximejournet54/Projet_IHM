@@ -1,7 +1,7 @@
 object f_gabarit: Tf_gabarit
-  Left = 640
+  Left = 447
   Height = 800
-  Top = 374
+  Top = 274
   Width = 1200
   Caption = 'Gestion des inscriptions'
   ClientHeight = 776

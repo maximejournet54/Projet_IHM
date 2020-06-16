@@ -8,8 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, u_gabarit, u_feuille_style, u_select_etudiant, u_list_inscrit,
-  zcomponent, u_detail_inscrit, u_notes_list, u_modele, u_select_etudiant,
-u_select_etudiant
+  zcomponent, u_detail_inscrit, u_notes_list, u_modele
   { you can add units after this };
 
 {$R *.res}

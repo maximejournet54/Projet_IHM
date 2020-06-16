@@ -59,10 +59,10 @@ type
     pnl_detail: TPanel;
     pnl_btn: TPanel;
     pnl_titre: TPanel;
-    procedure btn_annulerClick(Sender: TObject);
-    procedure btn_retourClick(Sender: TObject);
+   // procedure btn_annulerClick(Sender: TObject);
+   // procedure btn_retourClick(Sender: TObject);
     procedure btn_validerClick(Sender: TObject);
-    procedure cbx_civChange(Sender: TObject);
+   // procedure cbx_civChange(Sender: TObject);
     procedure edt_adresseExit(Sender: TObject);
     procedure edt_cpExit(Sender: TObject);
     procedure edt_emailExit(Sender: TObject);
@@ -79,13 +79,13 @@ type
     procedure add;
     procedure delete ( idinf : string);
     procedure edt_Enter (Sender : TObject );
-    procedure lbl_num_erreurClick(Sender: TObject);
-    procedure pnl_adresseClick(Sender: TObject);
-    procedure pnl_notes_listClick(Sender: TObject);
+   // procedure lbl_num_erreurClick(Sender: TObject);
+   // procedure pnl_adresseClick(Sender: TObject);
+   // procedure pnl_notes_listClick(Sender: TObject);
 
   private
     { private declarations }
-    procedure affi_page;
+   // procedure affi_page;
     function  affi_erreur_saisie     (erreur : string; lbl : TLabel; edt : TEdit) : boolean;
   public
     { public declarations }
@@ -187,15 +187,15 @@ begin
    pnl_notes_list.borderstyle  := bsNone;
    pnl_notes_list.parent  := pnl_notes_list;
    pnl_notes_list.align  := alClient;
-   pnl_notes_list.init(affi);
+   //pnl_notes_list.init(affi);
    pnl_notes_list.show;
-   pnl_notes_list.affi_data(modele.inscrit_notes(idinf));
+   //pnl_notes_list.affi_data(modele.inscrit_notes(idinf));
 
    show;
 
    id  := idinf;
-   IF  NOT  ( id = '')   // affichage/modification infraction
-   THEN  affi_page;
+   //IF  NOT  ( id = '')   // affichage/modification infraction
+   //THEN  affi_page;
 
 end;
 
@@ -208,31 +208,6 @@ begin
 	result := false;
    end
    else result := true;
-end;
-
-procedure	Tf_detail_inscrit.affi_page;
-var
-   flux:TLoadDataSet;
-begin
-   flux   := modele.inscrit_num(id);
-   flux.read;
-   edt_num.text	                    := flux.Get('id_etu');
-   edt_nom.text	                    := flux.Get('nom');
-   edt_prenom.text                  := flux.Get('prenom');
-   edt_adresse.text	            := flux.Get('adresse');
-   edt_cp.text	                    := flux.Get('cp');
-   edt_ville.text	            := flux.Get('ville');
-   edt_telephone.text	            := flux.Get('telephone');
-   edt_portable.text	            := flux.Get('portable');
-   edt_email.text	                    := flux.Get('mel');
-   edt_filiere.text	            := flux.Get('code_fil');
-   lbl_filiere_court.Caption	    := flux.Get('libcourt_fil');
-   lbl_filiere_long.Caption	    := flux.Get('libmilong_fil');
-   IF flux.Get('civ')='M' THEN cbx_civ.ItemIndex:=0
-   ELSE IF flux.Get('civ')='Mme' THEN cbx_civ.ItemIndex:=1
-   ELSE begin cbx_civ.ItemIndex:=-1 ;
-   end;
-   flux.destroy;
 end;
 
 procedure	Tf_detail_inscrit.detail (idinf : string);
@@ -263,8 +238,8 @@ begin
 	,mtConfirmation, [mbYes,mbNo], 0, mbNo) = mrYes
    THEN  BEGIN
           // suppression dans la base, complété par la suite
-          modele.inscrit_notes_delete(idinf);
-          modele.inscrit_delete (idinf);
+         // modele.inscrit_notes_delete(idinf);
+          //modele.inscrit_delete (idinf);
           f_list_inscrit.line_delete;
    END;
 end;
@@ -274,39 +249,9 @@ begin
      oldvaleur := TEdit(Sender).text;
 end;
 
-procedure Tf_detail_inscrit.lbl_num_erreurClick(Sender: TObject);
-begin
-
-end;
-
-procedure Tf_detail_inscrit.pnl_adresseClick(Sender: TObject);
-begin
-
-end;
-
-procedure Tf_detail_inscrit.pnl_notes_listClick(Sender: TObject);
-begin
-
-end;
-
-procedure Tf_detail_inscrit.btn_retourClick(Sender: TObject);
-begin
-     close;
-end;
-
-procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);
-begin
-  close;
-end;
-
-procedure Tf_detail_inscrit.cbx_civChange(Sender: TObject);
-begin
-
-end;
-
 procedure Tf_detail_inscrit.btn_validerClick(Sender: TObject);
   var
-    flux	     : TLoadDataSet;
+    //flux	     : TLoadDataSet;
     saisie, erreur, ch	 : string;
     i 	     : integer;
     valide  : boolean;
@@ -359,7 +304,7 @@ begin
     if  saisie = ''  then  erreur := 'Le code filière doit être rempli.'
     else  begin
 
-    ch := modele.recherche_filiere(saisie);
+   // ch := modele.recherche_filiere(saisie);
     if  ch = ''  then erreur := 'Code filière inexistant.';
     end;
     valide := affi_erreur_saisie (erreur, lbl_filiere_erreur, edt_filiere)  AND  valide;
@@ -369,26 +314,27 @@ begin
 	 erreur := '';
 	 saisie := edt_num.text;
 	 if  saisie = ''   then  erreur := 'Le numéro doit être rempli.'
-	 else begin
-	      flux := modele.inscrit_liste_etudiant(saisie, '');
-	      if  NOT  flux.endOf
-	      then  erreur := 'Le numéro existe déjà';
-	 end;
-	 valide := affi_erreur_saisie (erreur, lbl_num_erreur, edt_num)  AND  valide;
+	 //else begin
+	     // flux := modele.inscrit_liste_etudiant(saisie, '');
+	   //   if  NOT  flux.endOf
+	      //then  erreur := 'Le numéro existe déjà';
+	// end;
+	 //valide := affi_erreur_saisie (erreur, lbl_num_erreur, edt_num)  AND  valide;
     end;
 
     if  NOT  valide
     then  messagedlg ('Erreur enregistrement Inscription', 'La saisie est incorrecte.' +#13 +'Corrigez la saisie et validez à nouveau.', mtWarning, [mbOk], 0)
     else  begin
          if  id =''
-         then  modele.inscrit_insert (edt_num.Text, cbx_civ.Items[cbx_civ.ItemIndex], edt_nom.Text, edt_prenom.Text, edt_adresse.Text, edt_cp.Text, edt_ville.Text, edt_telephone.Text, edt_portable.Text, edt_email.Text, edt_filiere.Text)
-         else  begin
-       	       modele.inscrit_update (id, cbx_civ.Items[cbx_civ.ItemIndex], edt_nom.text, edt_prenom.text, edt_adresse.text, edt_cp.text, edt_ville.text, edt_telephone.text, edt_portable.text, edt_email.Text)
-         end;
+        // then  modele.inscrit_insert (edt_num.Text, cbx_civ.Items[cbx_civ.ItemIndex], edt_nom.Text, edt_prenom.Text, edt_adresse.Text, edt_cp.Text, edt_ville.Text, edt_telephone.Text, edt_portable.Text, edt_email.Text, edt_filiere.Text)
+         //else  begin
+       	//       modele.inscrit_update (id, cbx_civ.Items[cbx_civ.ItemIndex], edt_nom.text, edt_prenom.text, edt_adresse.text, edt_cp.text, edt_ville.text, edt_telephone.text, edt_portable.text, edt_email.Text)
+      //   end;
 
-	  if id='' then f_list_inscrit.line_add(modele.inscrit_liste_etudiant(edt_num.text,''))
-   	  else f_list_inscrit.line_edit(modele.inscrit_liste_etudiant(id,''));
-   	  close;
+	//  if id='' then f_list_inscrit.line_add(modele.inscrit_liste_etudiant(edt_num.text,''))
+   	//  else f_list_inscrit.line_edit(modele.inscrit_liste_etudiant(id,''));
+   	  then
+          close;
     end;
 end;
 

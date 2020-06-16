@@ -1,7 +1,7 @@
 inherited f_notes_list: Tf_notes_list
-  Left = 679
+  Left = 601
   Height = 401
-  Top = 454
+  Top = 531
   Width = 573
   Caption = 'f_notes_list'
   ClientHeight = 401

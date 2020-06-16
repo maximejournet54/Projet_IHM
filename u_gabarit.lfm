@@ -1,7 +1,7 @@
 object f_gabarit: Tf_gabarit
-  Left = 447
+  Left = 1305
   Height = 800
-  Top = 274
+  Top = 491
   Width = 1200
   Caption = 'Gestion des inscriptions'
   ClientHeight = 776
@@ -70,7 +70,6 @@ object f_gabarit: Tf_gabarit
       ParentColor = False
       ParentFont = False
       Transparent = False
-      OnClick = lbl_bienvenueClick
     end
   end
   object pnl_selection: TPanel

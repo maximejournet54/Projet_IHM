@@ -33,7 +33,6 @@ object f_detail_inscrit: Tf_detail_inscrit
       Top = 16
       Width = 75
       Caption = 'Retour '
-      OnClick = btn_retourClick
       TabOrder = 2
     end
     object btn_valider: TButton
@@ -51,7 +50,6 @@ object f_detail_inscrit: Tf_detail_inscrit
       Top = 16
       Width = 75
       Caption = 'Annuler'
-      OnClick = btn_annulerClick
       TabOrder = 0
     end
   end
@@ -151,7 +149,6 @@ object f_detail_inscrit: Tf_detail_inscrit
           'M'
           'Mme'
         )
-        OnChange = cbx_civChange
         TabOrder = 3
       end
       object lbl_num_erreur: TLabel
@@ -188,7 +185,6 @@ object f_detail_inscrit: Tf_detail_inscrit
       ClientHeight = 100
       ClientWidth = 918
       TabOrder = 1
-      OnClick = pnl_adresseClick
       object lbl_adresse: TLabel
         Left = -1
         Height = 19
@@ -437,7 +433,6 @@ object f_detail_inscrit: Tf_detail_inscrit
         Width = 410
         Align = alLeft
         TabOrder = 1
-        OnClick = pnl_notes_listClick
       end
     end
   end
